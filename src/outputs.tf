@@ -1,4 +1,4 @@
-output "mock" {
-  description = "Mock output example for the Cloud Posse Terraform component template"
-  value       = local.enabled ? "hello ${basename(abspath(path.module))}" : ""
+output "created_params" {
+  value       = local.param_keys
+  description = "The keys of created SSM parameter store resources."
 }
