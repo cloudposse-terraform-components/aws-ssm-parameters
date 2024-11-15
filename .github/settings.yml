@@ -2,7 +2,8 @@
 _extends: .github
 repository:
   name: aws-ssm-parameters
-  description: This component is responsible for provisioning Parameter Store resources against AWS SSM
+  description: "This component is responsible for provisioning Parameter Store resources against AWS SSM"
   homepage: https://cloudposse.com/accelerate
   topics: terraform, terraform-component
+
 
