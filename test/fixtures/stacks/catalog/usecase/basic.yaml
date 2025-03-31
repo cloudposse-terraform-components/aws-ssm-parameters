@@ -1,0 +1,14 @@
+components:
+  terraform:
+    ssm-parameter/basic:
+      metadata:
+        component: target
+      vars:
+        enabled: true
+        params:
+          /dev/testing:
+            value: This is a test of the emergency broadcast system.
+            description: This is a test.
+            overwrite: true
+            type: String
+
