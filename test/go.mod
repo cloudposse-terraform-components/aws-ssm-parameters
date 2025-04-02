@@ -2,6 +2,8 @@ module test
 
 go 1.23.0
 
+toolchain go1.24.1
+
 require (
 	github.com/cloudposse/test-helpers v0.19.0
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
@@ -13,8 +15,6 @@ require (
 )
 
 // replace github.com/rebuy-de/aws-nuke/v2/mocks => github.com/ekristen/aws-nuke/v3/ v3.29.0
-
-require github.com/aws/aws-sdk-go-v2/service/elasticloadbalancingv2 v1.43.12
 
 require (
 	dario.cat/mergo v1.0.1 // indirect
@@ -32,31 +32,24 @@ require (
 	github.com/aws/aws-sdk-go-v2/internal/ini v1.8.2 // indirect
 	github.com/aws/aws-sdk-go-v2/internal/v4a v1.3.32 // indirect
 	github.com/aws/aws-sdk-go-v2/service/acm v1.30.18 // indirect
-	github.com/aws/aws-sdk-go-v2/service/amplify v1.28.8 // indirect
 	github.com/aws/aws-sdk-go-v2/service/autoscaling v1.51.12 // indirect
-	github.com/aws/aws-sdk-go-v2/service/backup v1.40.10 // indirect
-	github.com/aws/aws-sdk-go-v2/service/cloudtrail v1.47.4 // indirect
 	github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs v1.45.12 // indirect
-	github.com/aws/aws-sdk-go-v2/service/docdb v1.40.10 // indirect
 	github.com/aws/aws-sdk-go-v2/service/dynamodb v1.40.1 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ec2 v1.203.0 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ecr v1.41.0 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ecs v1.53.13 // indirect
-	github.com/aws/aws-sdk-go-v2/service/efs v1.34.11 // indirect
 	github.com/aws/aws-sdk-go-v2/service/iam v1.39.1 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.12.2 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/checksum v1.6.0 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/endpoint-discovery v1.10.13 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.12.13 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/s3shared v1.18.13 // indirect
-	github.com/aws/aws-sdk-go-v2/service/kafka v1.38.16 // indirect
 	github.com/aws/aws-sdk-go-v2/service/kms v1.37.18 // indirect
 	github.com/aws/aws-sdk-go-v2/service/lambda v1.69.12 // indirect
 	github.com/aws/aws-sdk-go-v2/service/rds v1.93.12 // indirect
 	github.com/aws/aws-sdk-go-v2/service/route53 v1.48.7 // indirect
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.76.1 // indirect
 	github.com/aws/aws-sdk-go-v2/service/secretsmanager v1.34.18 // indirect
-	github.com/aws/aws-sdk-go-v2/service/sesv2 v1.41.5 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sns v1.33.19 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sqs v1.37.14 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ssm v1.56.12 // indirect
@@ -121,10 +114,10 @@ require (
 	github.com/zclconf/go-cty v1.15.0 // indirect
 	go.uber.org/atomic v1.9.0 // indirect
 	go.uber.org/multierr v1.9.0 // indirect
-	golang.org/x/crypto v0.33.0 // indirect
+	golang.org/x/crypto v0.35.0 // indirect
 	golang.org/x/exp v0.0.0-20231006140011-7918f672742d // indirect
 	golang.org/x/mod v0.18.0 // indirect
-	golang.org/x/net v0.35.0 // indirect
+	golang.org/x/net v0.36.0 // indirect
 	golang.org/x/sync v0.11.0 // indirect
 	golang.org/x/sys v0.30.0 // indirect
 	golang.org/x/text v0.22.0 // indirect
