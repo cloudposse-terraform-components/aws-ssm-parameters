@@ -37,4 +37,8 @@ resource "aws_ssm_parameter" "destination" {
   overwrite   = each.value.overwrite
 
   tags = module.this.tags
+
+  lifecycle {
+    ignore_changes = each.value.ignore_value_changes ? [value] : []
+  }
 }
