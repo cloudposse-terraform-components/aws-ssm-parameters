@@ -42,7 +42,7 @@ resource "aws_ssm_parameter" "destination" {
   description = each.value.description
   tier        = each.value.tier
   type        = each.value.type
-  key_id      = var.kms_arn
+  key_id      = length(var.kms_arn) > 0 ? var.kms_arn : null
   value       = each.value.value
   overwrite   = each.value.overwrite
 
@@ -56,7 +56,7 @@ resource "aws_ssm_parameter" "destination_ignored" {
   description = each.value.description
   tier        = each.value.tier
   type        = each.value.type
-  key_id      = var.kms_arn
+  key_id      = length(var.kms_arn) > 0 ? var.kms_arn : null
   value       = each.value.value
   overwrite   = each.value.overwrite
 
