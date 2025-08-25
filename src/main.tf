@@ -18,6 +18,16 @@ locals {
 
   params     = local.enabled ? merge(var.params, local.secret_params_normalized) : {}
   param_keys = keys(local.params)
+
+  params_apply_value_changes = {
+    for k, v in local.params : k => v
+    if !try(v.ignore_value_changes, false)
+  }
+
+  params_ignore_value_changes = {
+    for k, v in local.params : k => v
+    if try(v.ignore_value_changes, false)
+  }
 }
 
 data "sops_file" "source" {
@@ -26,7 +36,21 @@ data "sops_file" "source" {
 }
 
 resource "aws_ssm_parameter" "destination" {
-  for_each = local.params
+  for_each = local.params_apply_value_changes
+
+  name        = each.key
+  description = each.value.description
+  tier        = each.value.tier
+  type        = each.value.type
+  key_id      = var.kms_arn
+  value       = each.value.value
+  overwrite   = each.value.overwrite
+
+  tags = module.this.tags
+}
+
+resource "aws_ssm_parameter" "destination_ignored" {
+  for_each = local.params_ignore_value_changes
 
   name        = each.key
   description = each.value.description
@@ -39,6 +63,6 @@ resource "aws_ssm_parameter" "destination" {
   tags = module.this.tags
 
   lifecycle {
-    ignore_changes = each.value.ignore_value_changes ? [value] : []
+    ignore_changes = [value]
   }
 }
