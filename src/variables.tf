@@ -23,11 +23,12 @@ variable "kms_arn" {
 
 variable "params" {
   type = map(object({
-    value       = string
-    description = string
-    overwrite   = optional(bool, false)
-    tier        = optional(string, "Standard")
-    type        = string
+    value                = string
+    description          = string
+    overwrite            = optional(bool, false)
+    tier                 = optional(string, "Standard")
+    type                 = string
+    ignore_value_changes = optional(bool, false)
   }))
   description = "A map of parameter values to write to SSM Parameter Store"
 }
